@@ -1,2 +1,2 @@
-# akshaysasidharan.dev
+# akshay.fyi
 Personal website

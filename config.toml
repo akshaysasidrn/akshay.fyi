@@ -1,4 +1,4 @@
-baseurl = "https://akshaysasidharan.dev"
+baseurl = "https://akshay.fyi"
 languageCode = "en-us"
 theme = "hello-friend-ng"
 DefaultContentLanguage = "en"
@@ -7,7 +7,7 @@ enableGitInfo = true
   [services.googleAnalytics]
     id = "UA-147407762-1"
   [services.disqus]
-    shortname = "akshaysasidharan-dev"
+    shortname = "akshay-fyi"
 
 [params]
   dateform        = "Jan 2, 2006"
@@ -27,7 +27,7 @@ enableGitInfo = true
   homeSubtitle = "Senior Software Architect"
   author = "Akshay Sasidharan"
   customCSS = ["/css/custom.css"]
-  gitUrl = "https://github.com/aksh93/akshaysasidharan.dev/commit/"
+  gitUrl = "https://github.com/akshaysasidrn/akshay.fyi/commit/"
 
   # Social icons
   [[params.social]]
