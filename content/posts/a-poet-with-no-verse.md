@@ -18,10 +18,11 @@ How did the author come up with this idea?
 What should I learn to be able to write code as such?
 The codebase - it moved me.
 
-So I asked the [author](https://www.linkedin.com/in/abhijithg) of it one day those questions and he said - 
-*"Code should be like poetry"* 
-along with other advice advocating to be the student of the game.
-He never did give any further explanation for that quote and I also didn't ask for the source of it. The quote in itself was a beautiful abstraction.
+So I asked the [author](https://www.linkedin.com/in/abhijithg) of it one day those questions and he said -
+
+**"Code should be like poetry"**
+
+along with other advice advocating to be the student of the game. He never did give any further explanation for that quote and I also didn't ask for the source of it. The quote in itself was a beautiful abstraction.
 
 But in my head that idea bloomed such that, coders are like modern day technological poets. Where one could string in beautiful verses that can only be read and appreciated by a select few who had spent the time and effort to learn this craft. Unlike the poems in the traditional sense, here they can - not only move their readers but also - the electrons. It bound machines to your will!
 
@@ -47,7 +48,7 @@ I also empathise with the next generation of programmers working their way up. T
 
 From a business standpoint, I don't think any of this is a problem. Businesses have always leaned toward what's measurable - commits, output, velocity. If it can be quantified, it can be assessed. The soul of the craft only gets attention when money isn't the constraint. And money, whether we like it or not, is what keeps the machine running.
 
-But when you look at the big shifts in our industry the technologies that truly changed things - they were almost always driven by people who cared deeply. People who were obsessed. Passion has always been part of the story.
+But when you look at the big shifts in our industry, the technologies that truly changed things - they were almost always driven by people who cared deeply. People who were obsessed. Passion has always been part of the story.
 
 ---
 
