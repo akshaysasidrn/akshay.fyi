@@ -22,9 +22,11 @@ So I asked the [author](https://www.linkedin.com/in/abhijithg) of it one day tho
 
 **"Code should be like poetry"**
 
-along with other advice advocating to be the student of the game. He never did give any further explanation for that quote and I also didn't ask for the source of it. The quote in itself was a beautiful abstraction.
+along with other advice advocating to be the student of the game. He never did give any further explanation for that quote nor did I ask for the source of it. The quote in itself was a beautiful abstraction.
 
 But in my head that idea bloomed such that, coders are like modern day technological poets. Where one could string in beautiful verses that can only be read and appreciated by a select few who had spent the time and effort to learn this craft. Unlike the poems in the traditional sense, here they can - not only move their readers but also - the electrons. It bound machines to your will!
+
+How cool is that I get to do this as a day job and be paid for?!
 
 ---
 
