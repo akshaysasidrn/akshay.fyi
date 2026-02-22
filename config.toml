@@ -24,7 +24,7 @@ enableGitInfo = true
   contentTypeName = "posts"
   # Default theme "light" or "dark"
   defaultTheme = "dark"
-  homeSubtitle = "Team Lead"
+  homeSubtitle = "Senior Software Architect"
   author = "Akshay Sasidharan"
   customCSS = ["/css/custom.css"]
   gitUrl = "https://github.com/aksh93/akshaysasidharan.dev/commit/"
@@ -46,9 +46,9 @@ enableGitInfo = true
     name = "linkedin"
     url  = "https://www.linkedin.com/in/akshay-sasidharan/"
 
-  [[params.social]]
-    name = "instagram"
-    url  = "https://www.instagram.com/akshaysasidharan/"
+  # [[params.social]]
+  #   name = "instagram"
+  #   url  = "https://www.instagram.com/akshaysasidharan/"
 
   [[params.social]]
     name = "spotify"
