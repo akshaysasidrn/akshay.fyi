@@ -3,8 +3,11 @@ languageCode = "en-us"
 theme = "hello-friend-ng"
 DefaultContentLanguage = "en"
 enableGitInfo = true
-googleAnalytics = "UA-147407762-1"
-disqusShortname = "akshaysasidharan-dev"
+[services]
+  [services.googleAnalytics]
+    id = "UA-147407762-1"
+  [services.disqus]
+    shortname = "akshaysasidharan-dev"
 
 [params]
   dateform        = "Jan 2, 2006"
@@ -22,6 +25,7 @@ disqusShortname = "akshaysasidharan-dev"
   # Default theme "light" or "dark"
   defaultTheme = "dark"
   homeSubtitle = "Team Lead"
+  author = "Akshay Sasidharan"
   customCSS = ["/css/custom.css"]
   gitUrl = "https://github.com/aksh93/akshaysasidharan.dev/commit/"
 
