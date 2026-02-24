@@ -3,6 +3,11 @@ languageCode = "en-us"
 theme = "hello-friend-ng"
 DefaultContentLanguage = "en"
 enableGitInfo = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
 [services]
   [services.googleAnalytics]
     id = "UA-147407762-1"

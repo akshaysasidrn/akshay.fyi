@@ -7,7 +7,7 @@ tags:
   - AI
 ---
 
-It's been a while since my last post. Since then, I left my consulting gig and joined an early-stage startup. I wore more hats than I expected, got to lead and mentor people, and along the way entered my 30s (midlife-crisis / existential-dread era). Just when I felt like I had found my footing and mapped out my trajectory, AI showed up and reshaped the landscape. Now nearly a decade into writing code, it feels like the right time to pause and reflect on what I've been feeling lately.
+It's been a while since my last post. Since then, I left my consulting gig and joined an early-stage startup. I wore more hats than I expected, got to lead and mentor people, and along the way entered my 30s (midlife-crisis / existential-dread [era](https://www.youtube.com/watch?v=E4r5ckveXD8)). Just when I felt like I had found my footing and mapped out my trajectory, AI showed up and reshaped the landscape. Now nearly a decade into writing code, it feels like the right time to pause and reflect on what I've been feeling lately.
 
 ---
 
@@ -20,7 +20,7 @@ The codebase - it moved me.
 
 So I asked the [author](https://www.linkedin.com/in/abhijithg) of it one day those questions and he said -
 
-**"Code should be like poetry"**
+***"Code should be like poetry"***
 
 along with other advice advocating to be the student of the game. He never did give any further explanation for that quote nor did I ask for the source of it. The quote in itself was a beautiful abstraction.
 
@@ -30,7 +30,7 @@ How cool is that I get to do this as a day job and be paid for?!
 
 ---
 
-In my professional career, I was lucky to work with and be mentored by some really smart and inspiring folks. And I have a couple of quotes from each one of them that I keep in my head and still try to align myself with. But this one was my favourite.
+In my professional career, I was yet again fortunate to work with and be mentored by some really smart and inspiring folks. And I have a couple of quotes from each one of them that I keep in my head and still try to align myself with. But this one was my favourite.
 
 Mainly because I'd like to think I'm a creative person. Like I always have a need to do some sort of self expression as fix. If I don't, it bottles up and then I have to create something, like this post I'm writing for instance. Coding for me is a form of [self expression](https://www.youtube.com/watch?v=ypOY09JTvCo).
 
@@ -54,6 +54,6 @@ But when you look at the big shifts in our industry, the technologies that truly
 
 ---
 
-I'm not saying AI is bad because I'm a big time advocate for it at my current workplace. Maybe the uneasiness I feel is because my creative outlet is withering away. Maybe the real question now for people like me is: If code is poetry, how good is a poem that's never read? That never moves anyone? One which was never written by you.
+I'm not saying AI is bad because I'm a big time advocate for it at my current workplace. Often I'm amazed what I can do leveraging it. Maybe the uneasiness I feel is because my creative outlet is withering away. Maybe the real question now for people like me is: If code is poetry, how good is a poem that's never read? That never moves anyone? One which was never written by you.
 
 Because these days, by that analogy, if I were a poet, I’d be one with no verses to write.
