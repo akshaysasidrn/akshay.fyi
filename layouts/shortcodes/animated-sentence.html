@@ -1,0 +1,458 @@
+<div class="anim-sentence" id="anim-sentence">
+  <p>Because I can now <span class="anim-express">express</span> myself more clearly.</p>
+  <p>I can <span class="anim-iterate-wrap"><span class="anim-iterate-dash">–</span><span class="anim-iterate">experiment</span><span class="anim-iterate-dash">–</span></span> with different <span class="anim-ideas">ideas</span>.</p>
+  <p>I can <span class="anim-scratch">scratch</span> the ones that don't work, or <span class="anim-modify" aria-label="modify">modify</span> the ones that do.</p>
+  <p>I can be adventurous and do things I wouldn't have attempted otherwise.</p>
+</div>
+
+<style>
+body:not(.dark-theme) .anim-sentence {
+  --anim-cue-glow: rgba(176, 120, 24, 0.22);
+  --anim-express-color: #8a5a00;
+  --anim-express-glow: rgba(138, 90, 0, 0.18);
+  --anim-ideas-color: #b8860b;
+  --anim-ideas-glow-a: rgba(255, 200, 0, 0.9);
+  --anim-ideas-glow-b: rgba(255, 170, 0, 0.7);
+  --anim-ideas-glow-c: rgba(255, 140, 0, 0.4);
+  --anim-scratch-color: #c13f4b;
+}
+
+body.dark-theme .anim-sentence {
+  --anim-cue-glow: rgba(255, 224, 130, 0.2);
+  --anim-express-color: #d4a574;
+  --anim-express-glow: rgba(212, 165, 116, 0.28);
+  --anim-ideas-color: #ffd54f;
+  --anim-ideas-glow-a: rgba(255, 224, 100, 0.9);
+  --anim-ideas-glow-b: rgba(255, 200, 50, 0.7);
+  --anim-ideas-glow-c: rgba(255, 170, 0, 0.4);
+  --anim-scratch-color: #ff6b72;
+}
+
+.anim-sentence {
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.anim-sentence p {
+  margin: 0.4em 0;
+}
+
+.anim-sentence span {
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+/* Cue: soft glow before each word activates */
+.anim-express.cue,
+.anim-iterate-wrap.cue,
+.anim-ideas.cue,
+.anim-scratch.cue,
+.anim-modify.cue {
+  text-shadow: 0 0 8px var(--anim-cue-glow);
+}
+
+/* EXPRESS: lighter weight + warm ink color + glow */
+.anim-express {
+  display: inline-block;
+  position: relative;
+  white-space: nowrap;
+  transition: font-weight 0.5s ease, letter-spacing 0.5s ease, color 0.5s ease, text-shadow 0.5s ease;
+}
+
+.anim-express.active {
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  color: var(--anim-express-color);
+  text-shadow: 0 0 12px var(--anim-express-glow);
+}
+
+/* ITERATE: cycles through typefaces */
+.anim-iterate-wrap {
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: center;
+  position: relative;
+  white-space: nowrap;
+  height: 1.4em;
+  overflow: hidden;
+}
+
+.anim-iterate-dash {
+  opacity: 0.4;
+  padding: 0 0.25em;
+}
+
+.anim-iterate {
+  display: inline-block;
+  white-space: nowrap;
+  transition: filter 0.15s ease, opacity 0.15s ease;
+}
+
+/* IDEAS: gentle breathing glow */
+.anim-ideas {
+  display: inline-block;
+  position: relative;
+  white-space: nowrap;
+}
+
+.anim-ideas.active {
+  color: var(--anim-ideas-color);
+  animation: ideasGlow 3s ease-in-out infinite;
+}
+
+@keyframes ideasGlow {
+  0%, 100% {
+    text-shadow: 0 0 8px var(--anim-ideas-glow-a), 0 0 20px var(--anim-ideas-glow-b);
+  }
+  50% {
+    text-shadow: 0 0 16px var(--anim-ideas-glow-a), 0 0 36px var(--anim-ideas-glow-b), 0 0 60px var(--anim-ideas-glow-c);
+  }
+}
+
+/* SCRATCH: strikethrough line */
+.anim-scratch {
+  display: inline-block;
+  position: relative;
+  white-space: nowrap;
+}
+
+.anim-scratch::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 52%;
+  height: 1.5px;
+  width: 0%;
+  background: var(--anim-scratch-color);
+  transition: width 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.anim-scratch.active::after {
+  width: 100%;
+}
+
+/* MODIFY: JS-driven character scramble */
+.anim-modify {
+  display: inline-block;
+  position: relative;
+  white-space: nowrap;
+}
+
+/* MUSICAL NOTES from screen edges */
+.music-note {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  will-change: transform, opacity;
+  animation: noteFloat 8s ease-out forwards;
+}
+
+body:not(.dark-theme) .music-note {
+  color: rgba(120, 80, 10, 0.7);
+}
+
+body.dark-theme .music-note {
+  color: rgba(255, 224, 130, 0.6);
+}
+
+@keyframes noteFloat {
+  0% {
+    opacity: 0;
+    transform: translateY(0) rotate(0deg);
+  }
+  12% {
+    opacity: 0.75;
+  }
+  55% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-250px) rotate(12deg);
+  }
+}
+</style>
+
+<script>
+(function () {
+  const el = document.getElementById('anim-sentence');
+  if (!el) return;
+
+  const $ = (s) => el.querySelector(s);
+  const express     = $('.anim-express');
+  const iterateWrap = $('.anim-iterate-wrap');
+  const iterate     = $('.anim-iterate');
+  const ideas       = $('.anim-ideas');
+  const scratch     = $('.anim-scratch');
+  const modify      = $('.anim-modify');
+
+  const CUE_LEAD = 600;
+  const STEP_GAP = 1500;
+  let timers = [];
+  let scrambleTimer = null;
+
+  // ── Iterate: multilingual script cycle ───────────────────
+  const iterateVariants = [
+    { text: 'പരീക്ഷണം' },       // Malayalam
+    { text: 'परीक्षण' },          // Hindi
+    { text: 'تجربة', dir: 'rtl' }, // Arabic
+    { text: '実験' },              // Japanese
+    { text: 'expérience' },        // French
+    { text: 'experimento' },       // Spanish
+    { text: '实验' },              // Chinese
+    { text: 'பரிசோதனை' },        // Tamil
+    { text: 'ಪ್ರಯೋಗ' },           // Kannada
+    { text: 'ప్రయోగం' },          // Telugu
+  ];
+
+  // ── Width locking ────────────────────────────────────────
+  function measureMax(element, samples) {
+    const probe = document.createElement('span');
+    const cs = getComputedStyle(element);
+    probe.style.cssText =
+      'position:absolute;visibility:hidden;white-space:nowrap;' +
+      'left:-9999px;top:-9999px;pointer-events:none';
+    document.body.appendChild(probe);
+
+    let max = 0;
+    for (const s of samples) {
+      probe.textContent = s.text;
+      probe.style.fontFamily    = s.fontFamily    || cs.fontFamily;
+      probe.style.fontSize      = s.fontSize      || cs.fontSize;
+      probe.style.fontWeight    = s.fontWeight    || cs.fontWeight;
+      probe.style.letterSpacing = s.letterSpacing || cs.letterSpacing;
+      max = Math.max(max, probe.getBoundingClientRect().width);
+    }
+    probe.remove();
+    return Math.ceil(max) + 1;
+  }
+
+  function lockWidths() {
+    express.style.minWidth = measureMax(express, [
+      { text: 'express' },
+      { text: 'express', fontWeight: '300', letterSpacing: '0.05em' },
+    ]) + 'px';
+
+    const mw = measureMax(modify, [{ text: 'modify' }]);
+    modify.style.width = mw + 'px';
+    modify.style.textAlign = 'center';
+
+    const iw = measureMax(iterate, iterateVariants);
+    iterateWrap.style.width = (iw + 24) + 'px';  // +24 for dash padding
+    iterate.style.textAlign = 'center';
+    iterate.style.minWidth = iw + 'px';
+  }
+
+  let iterateTimer = null;
+  let variantIdx = 0;
+
+  function startIterate() {
+    const PAUSE = 3500;   // time showing "experiment" between variants
+    const SHOW  = 1200;   // time showing the variant
+
+    function showVariant() {
+      const v = iterateVariants[variantIdx];
+      // blur out
+      iterate.style.filter = 'blur(2px)';
+      iterate.style.opacity = '0.2';
+
+      setTimeout(() => {
+        // swap in variant
+        iterate.textContent = v.text;
+        iterate.style.fontFamily = v.fontFamily || '';
+        iterate.style.fontSize = v.fontSize || '';
+        iterate.style.direction = v.dir || '';
+        iterate.style.filter = 'blur(0)';
+        iterate.style.opacity = '1';
+      }, 160);
+
+      setTimeout(() => {
+        // blur out variant
+        iterate.style.filter = 'blur(2px)';
+        iterate.style.opacity = '0.2';
+
+        setTimeout(() => {
+          // restore "experiment"
+          iterate.textContent = 'experiment';
+          iterate.style.fontFamily = '';
+          iterate.style.fontSize = '';
+          iterate.style.direction = '';
+          iterate.style.filter = 'blur(0)';
+          iterate.style.opacity = '1';
+
+          variantIdx = (variantIdx + 1) % iterateVariants.length;
+          iterateTimer = setTimeout(showVariant, PAUSE);
+        }, 160);
+      }, SHOW);
+    }
+
+    iterateTimer = setTimeout(showVariant, PAUSE);
+  }
+
+  function stopIterate() {
+    if (iterateTimer) {
+      clearTimeout(iterateTimer);
+      iterateTimer = null;
+    }
+    iterate.textContent = 'experiment';
+    iterate.style.fontFamily = '';
+    iterate.style.fontSize = '';
+    iterate.style.direction = '';
+    iterate.style.filter = '';
+    iterate.style.opacity = '';
+  }
+
+  // ── Quick glitch for "modify" ────────────────────────────
+  function startScramble() {
+    const original = 'modify';
+    const chars = 'abcdefghijklmnopqrstuvwxyz';
+    const len = original.length;
+
+    const HOLD = 1500;
+    const FLICKERS = 3;
+    const FLICKER_ON = 120;
+    const FLICKER_OFF = 100;
+
+    function glitchOnce() {
+      const count = 2 + Math.floor(Math.random() * 2); // 2-3 letters
+      const indices = [];
+      while (indices.length < count) {
+        const idx = Math.floor(Math.random() * len);
+        if (!indices.includes(idx)) indices.push(idx);
+      }
+      let out = '';
+      for (let i = 0; i < len; i++) {
+        out += indices.includes(i)
+          ? chars[Math.floor(Math.random() * chars.length)]
+          : original[i];
+      }
+      modify.textContent = out;
+    }
+
+    function runFlickers(n) {
+      if (n <= 0) {
+        modify.textContent = original;
+        scrambleTimer = setTimeout(() => runFlickers(FLICKERS), HOLD);
+        return;
+      }
+      glitchOnce();
+      scrambleTimer = setTimeout(() => {
+        modify.textContent = original;
+        scrambleTimer = setTimeout(() => runFlickers(n - 1), FLICKER_OFF);
+      }, FLICKER_ON);
+    }
+
+    scrambleTimer = setTimeout(() => runFlickers(FLICKERS), HOLD);
+  }
+
+  function stopScramble() {
+    if (scrambleTimer) {
+      clearTimeout(scrambleTimer);
+      scrambleTimer = null;
+    }
+    modify.textContent = 'modify';
+  }
+
+  // ── Sequence ─────────────────────────────────────────────
+  const steps = [
+    { cueEl: express,     activate: () => express.classList.add('active') },
+    { cueEl: iterateWrap, activate: startIterate },
+    { cueEl: ideas,       activate: () => ideas.classList.add('active') },
+    { cueEl: scratch,     activate: () => scratch.classList.add('active') },
+    { cueEl: modify,      activate: startScramble },
+  ];
+
+  function run() {
+    clearTimers();
+    steps.forEach((step, i) => {
+      const delay = Math.max(CUE_LEAD, i * STEP_GAP);
+      const cueAt = Math.max(0, delay - CUE_LEAD);
+      timers.push(setTimeout(() => step.cueEl.classList.add('cue'), cueAt));
+      timers.push(setTimeout(() => {
+        step.cueEl.classList.remove('cue');
+        step.activate();
+      }, delay));
+    });
+  }
+
+  function clearTimers() {
+    timers.forEach(clearTimeout);
+    timers = [];
+  }
+
+  function reset() {
+    clearTimers();
+    stopIterate();
+    stopScramble();
+    [express, iterateWrap, ideas, scratch, modify].forEach(n => n.classList.remove('cue'));
+    [express, ideas, scratch].forEach(n => n.classList.remove('active'));
+  }
+
+  // ── Init ─────────────────────────────────────────────────
+  lockWidths();
+  window.addEventListener('resize', lockWidths);
+
+  // Trigger when element reaches viewport midpoint, persist below
+  const triggerOffset = el.offsetTop - window.innerHeight / 2 + el.offsetHeight / 2;
+  let animActive = false;
+  function onScroll() {
+    if (window.scrollY >= triggerOffset && !animActive) {
+      animActive = true;
+      run(); startNotes();
+    } else if (window.scrollY < triggerOffset && animActive) {
+      animActive = false;
+      reset(); stopNotes();
+    }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // ── Musical notes from screen edges ────────────────────
+  const symbols = ['♪', '♫', '♩', '♬'];
+  let noteInterval = null;
+
+  function spawnNote(side) {
+    const note = document.createElement('span');
+    note.className = 'music-note';
+    note.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+    note.style.bottom = (10 + Math.random() * 30) + 'px';
+    // Place near the viewport edges, away from content
+    if (side === 'left') {
+      note.style.left = (10 + Math.random() * 40) + 'px';
+    } else {
+      note.style.right = (10 + Math.random() * 40) + 'px';
+    }
+    note.style.fontSize = (1.1 + Math.random() * 0.5) + 'rem';
+    document.body.appendChild(note);
+    note.addEventListener('animationend', () => note.remove());
+  }
+
+  function startNotes() {
+    if (noteInterval) return;
+    spawnNote('left');
+    setTimeout(() => spawnNote('right'), 600);
+    noteInterval = setInterval(() => {
+      spawnNote('left');
+      setTimeout(() => spawnNote('right'), 1200 + Math.random() * 800);
+    }, 5000);
+  }
+
+  function stopNotes() {
+    if (noteInterval) {
+      clearInterval(noteInterval);
+      noteInterval = null;
+    }
+  }
+
+})();
+</script>
