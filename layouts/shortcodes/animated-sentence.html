@@ -454,5 +454,18 @@ body.dark-theme .music-note {
     }
   }
 
+  function clearAllNotes() {
+    document.querySelectorAll('.music-note').forEach(n => n.remove());
+  }
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      stopNotes();
+      clearAllNotes();
+    } else if (animActive) {
+      startNotes();
+    }
+  });
+
 })();
 </script>
