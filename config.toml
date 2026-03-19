@@ -32,6 +32,12 @@ enableGitInfo = true
   homeSubtitle = "Senior Software Architect"
   author = "Akshay Sasidharan"
   customCSS = ["/css/custom.css"]
+
+  [params.giscus]
+    repo       = "akshaysasidrn/akshay.fyi"
+    repoId     = "MDEwOlJlcG9zaXRvcnkyMDcxMzU5MDU="
+    category   = "Announcements"
+    categoryId = "DIC_kwDODFikoc4C4zS2"
   gitUrl = "https://github.com/akshaysasidrn/akshay.fyi/commit/"
 
   # Social icons

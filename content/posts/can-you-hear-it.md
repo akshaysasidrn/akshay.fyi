@@ -2,6 +2,7 @@
 title: "Can you hear it?"
 date: 2026-03-16T00:00:00+05:30
 draft: false
+comments: true
 tags:
   - career
   - AI

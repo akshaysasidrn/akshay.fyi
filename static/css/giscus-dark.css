@@ -1,52 +1,111 @@
+:root {
+  --gc-font:    'Inter UI', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --gc-bg:      #292a2d;
+  --gc-bg-2:    #3b3d42;
+  --gc-text:    #a9a9b3;
+  --gc-text-2:  #73747b;
+  --gc-border:  #4a4b50;
+  --gc-link:    #79c0ff;
+}
+
+/* ── iframe wrapper ─────────────────────────────────── */
 .giscus-frame {
-  font-family: var(--giscus-font) !important;
+  font-family: var(--gc-font) !important;
 }
 
-.gsc-main {
-  background: transparent !important;
-  color: var(--giscus-dark-text) !important;
-  font-family: var(--giscus-font) !important;
-}
-
-.gsc-comment-box {
+/* ── page background ────────────────────────────────── */
+.gsc-main,
+.gsc-timeline,
+.gsc-comments,
+.gsc-header,
+.gsc-reactions,
+.gsc-comment,
+.gsc-comment-header,
+.gsc-comment-box,
+.gsc-comment-box-tabs {
   background: transparent !important;
   border: none !important;
   border-radius: 0 !important;
   box-shadow: none !important;
 }
 
+/* ── text ───────────────────────────────────────────── */
+.gsc-main,
+.gsc-header-title,
+.gsc-reactions-count,
+.gsc-comment-author,
+.gsc-comment-content,
+.gsc-no-comment,
+.gsc-comment-action,
+.gsc-sort-item {
+  color: var(--gc-text) !important;
+  font-family: var(--gc-font) !important;
+}
+
+/* headings */
+.gsc-header h4,
+.gsc-header h4 a,
+.gsc-comments h4,
+.gsc-comments h4 a {
+  color: var(--gc-text) !important;
+}
+
+/* secondary / muted */
+.gsc-comment-time,
+.gsc-reactions-count,
+.gsc-sort-item {
+  color: var(--gc-text-2) !important;
+  font-size: 0.78rem !important;
+}
+
+/* ── separators ─────────────────────────────────────── */
+.gsc-reactions {
+  border-bottom: 1px solid var(--gc-border) !important;
+  padding: 0.75rem 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.gsc-comment {
+  border-bottom: 1px solid var(--gc-border) !important;
+  padding: 1rem 0 !important;
+}
+
+.gsc-comment:last-child {
+  border-bottom: none !important;
+}
+
+/* ── comment box tabs ───────────────────────────────── */
 .gsc-comment-box-tabs {
-  background: transparent !important;
-  border: none !important;
   padding: 0.5rem 0 !important;
 }
 
 .gsc-comment-box-tab {
-  font-family: var(--giscus-font) !important;
+  font-family: var(--gc-font) !important;
   font-size: 0.82rem !important;
   font-weight: 600 !important;
-  color: var(--giscus-dark-text-secondary) !important;
+  color: var(--gc-text-2) !important;
   padding: 0.4rem 0.8rem !important;
   border-radius: 6px !important;
   transition: all 0.2s ease !important;
 }
 
 .gsc-comment-box-tab:hover {
-  background: rgba(37, 38, 39, 0.4) !important;
+  background: var(--gc-bg-2) !important;
 }
 
 .gsc-comment-box-tab.gsc-comment-box-tab-active {
-  color: var(--giscus-dark-text) !important;
-  background: rgba(37, 38, 39, 0.3) !important;
+  color: var(--gc-text) !important;
+  background: var(--gc-bg-2) !important;
 }
 
+/* ── textarea ───────────────────────────────────────── */
 .gsc-comment-box-textarea,
 .gsc-comment-box-preview {
-  background: rgba(37, 38, 39, 0.4) !important;
+  background: var(--gc-bg-2) !important;
   border: none !important;
-  border-radius: 8px !important;
-  color: var(--giscus-dark-text) !important;
-  font-family: var(--giscus-font) !important;
+  border-radius: 6px !important;
+  color: var(--gc-text) !important;
+  font-family: var(--gc-font) !important;
   font-size: 0.9rem !important;
   line-height: 1.6 !important;
   padding: 0.85rem !important;
@@ -55,19 +114,20 @@
 .gsc-comment-box-textarea:focus,
 .gsc-comment-box-preview:focus {
   outline: none !important;
-  background: rgba(37, 38, 39, 0.6) !important;
+  background: var(--gc-bg-2) !important;
 }
 
 .gsc-comment-box-textarea::placeholder {
-  color: #5c6370 !important;
+  color: var(--gc-text-2) !important;
 }
 
+/* ── submit button ──────────────────────────────────── */
 .gsc-comment-box .gsc-button {
-  background: rgba(108, 122, 133, 0.4) !important;
+  background: var(--gc-bg-2) !important;
   border: none !important;
-  border-radius: 8px !important;
-  color: var(--giscus-dark-text) !important;
-  font-family: var(--giscus-font) !important;
+  border-radius: 6px !important;
+  color: var(--gc-text) !important;
+  font-family: var(--gc-font) !important;
   font-size: 0.85rem !important;
   font-weight: 600 !important;
   padding: 0.5rem 1.2rem !important;
@@ -75,58 +135,13 @@
 }
 
 .gsc-comment-box .gsc-button:hover {
-  background: rgba(108, 122, 133, 0.6) !important;
+  filter: brightness(1.1) !important;
 }
 
-.gsc-timeline {
-  background: transparent !important;
-}
-
-.gsc-comments {
-  gap: 0 !important;
-}
-
-.gsc-comment {
-  background: transparent !important;
-  border: none !important;
-  border-bottom: 1px solid rgba(64, 66, 72, 0.3) !important;
-  border-radius: 0 !important;
-  padding: 1rem 0 !important;
-}
-
-.gsc-comment:last-child {
-  border-bottom: none !important;
-}
-
-.gsc-comment-header {
-  background: transparent !important;
-  border: none !important;
-  padding: 0 0 0.5rem !important;
-}
-
-.gsc-comment-author-avatar {
-  border-radius: 50% !important;
-  box-shadow: none !important;
-  border: none !important;
-}
-
-.gsc-comment-author {
-  font-family: var(--giscus-font) !important;
-  font-weight: 600 !important;
-  color: var(--giscus-dark-text) !important;
-}
-
-.gsc-comment-time {
-  font-family: var(--giscus-font) !important;
-  color: var(--giscus-dark-text-secondary) !important;
-  font-size: 0.78rem !important;
-}
-
+/* ── comment content ────────────────────────────────── */
 .gsc-comment-content {
-  font-family: Georgia, "Times New Roman", serif !important;
   font-size: 0.95rem !important;
   line-height: 1.7 !important;
-  color: var(--giscus-dark-text) !important;
   padding: 0.5rem 0 0 !important;
 }
 
@@ -139,81 +154,60 @@
 }
 
 .gsc-comment-content a {
-  color: #79c0ff !important;
+  color: var(--gc-link) !important;
   text-decoration: underline !important;
   text-decoration-color: rgba(121, 192, 255, 0.3) !important;
   text-underline-offset: 2px !important;
 }
 
 .gsc-comment-content a:hover {
-  text-decoration-color: #79c0ff !important;
+  text-decoration-color: var(--gc-link) !important;
 }
 
-.gsc-comment-action {
-  font-family: var(--giscus-font) !important;
-  font-size: 0.78rem !important;
-  color: var(--giscus-dark-text-secondary) !important;
-  padding: 0.5rem 0.5rem 0.5rem 0 !important;
-}
-
-.gsc-comment-action:hover {
-  color: var(--giscus-dark-text) !important;
-}
-
-.gsc-reactions {
-  background: transparent !important;
-  border: none !important;
-  border-bottom: 1px solid rgba(64, 66, 72, 0.3) !important;
-  padding: 0.75rem 0 !important;
-  margin-bottom: 0 !important;
-}
-
-.gsc-reactions-count {
-  font-family: var(--giscus-font) !important;
-  font-size: 0.82rem !important;
-  font-weight: 600 !important;
-  color: var(--giscus-dark-text-secondary) !important;
-}
-
+/* ── reactions ──────────────────────────────────────── */
 .gsc-social-reaction-summary-item {
   background: transparent !important;
   border: none !important;
   border-radius: 0 !important;
   padding: 0.2rem 0.4rem !important;
-  font-family: var(--giscus-font) !important;
+  font-family: var(--gc-font) !important;
   font-size: 0.78rem !important;
 }
 
-.gsc-header {
-  background: transparent !important;
+/* ── misc ───────────────────────────────────────────── */
+.gsc-comment-author-avatar {
+  border-radius: 50% !important;
+  box-shadow: none !important;
   border: none !important;
+}
+
+.gsc-header {
   padding: 1rem 0 !important;
 }
 
-.gsc-header-title {
-  font-family: var(--giscus-font) !important;
-  font-weight: 700 !important;
-  color: var(--giscus-dark-text) !important;
+.gsc-comments {
+  gap: 0 !important;
 }
 
-.gsc-no-comment {
-  font-family: var(--giscus-font) !important;
-  color: var(--giscus-dark-text-secondary) !important;
-  font-style: italic !important;
+.gsc-comment-header {
+  padding: 0 0 0.5rem !important;
+}
+
+.gsc-comment-action {
+  font-size: 0.78rem !important;
+  padding: 0.5rem 0.5rem 0.5rem 0 !important;
+}
+
+.gsc-comment-action:hover {
+  color: var(--gc-text) !important;
 }
 
 .gsc-sort-dropdown {
-  font-family: var(--giscus-font) !important;
-}
-
-.gsc-sort-item {
-  font-family: var(--giscus-font) !important;
-  font-size: 0.82rem !important;
-  color: var(--giscus-dark-text-secondary) !important;
+  font-family: var(--gc-font) !important;
 }
 
 .gsc-sort-item:hover {
-  background: rgba(37, 38, 39, 0.4) !important;
+  background: var(--gc-bg-2) !important;
 }
 
 .gsc-loading-icon {
