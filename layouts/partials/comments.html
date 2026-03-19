@@ -5,8 +5,8 @@
 
   function themeUrl(dark) {
     return dark
-      ? "https://akshay.fyi/css/giscus-dark.css?v=2"
-      : "https://akshay.fyi/css/giscus-light.css?v=2";
+      ? "https://akshay.fyi/css/giscus-dark.css?v=3"
+      : "https://akshay.fyi/css/giscus-light.css?v=3";
   }
 
   const s = document.createElement("script");
@@ -29,16 +29,15 @@
   s.async = true;
   document.currentScript.parentNode.insertBefore(s, document.currentScript);
 
-  // Sync giscus theme when the blog theme is toggled
-  document.querySelector(".theme-toggle").addEventListener("click", () => {
+  // Sync giscus theme whenever body class changes (dark-theme toggled)
+  new MutationObserver(() => {
     const dark = document.body.classList.contains("dark-theme");
     const iframe = document.querySelector("iframe.giscus-frame");
-    if (iframe) {
-      iframe.contentWindow.postMessage(
-        { giscus: { setConfig: { theme: themeUrl(dark) } } },
-        "https://giscus.app"
-      );
-    }
-  });
+    if (!iframe) return;
+    iframe.contentWindow.postMessage(
+      { giscus: { setConfig: { theme: themeUrl(dark) } } },
+      "https://giscus.app"
+    );
+  }).observe(document.body, { attributes: true, attributeFilter: ["class"] });
 })();
 </script>
