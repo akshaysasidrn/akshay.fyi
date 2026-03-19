@@ -9,17 +9,16 @@
 }
 
 .gsc-comment-box {
-  background: rgba(37, 38, 39, 0.97) !important;
-  border: 1px solid var(--giscus-dark-border) !important;
-  border-radius: 16px !important;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25) !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
 }
 
 .gsc-comment-box-tabs {
-  background: var(--giscus-dark-bg-secondary) !important;
-  border-bottom: 1px solid var(--giscus-dark-border) !important;
-  border-radius: 16px 16px 0 0 !important;
-  padding: 0.5rem 1rem !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 0.5rem 0 !important;
 }
 
 .gsc-comment-box-tab {
@@ -27,61 +26,56 @@
   font-size: 0.82rem !important;
   font-weight: 600 !important;
   color: var(--giscus-dark-text-secondary) !important;
-  padding: 0.5rem 1rem !important;
-  border-radius: 8px !important;
+  padding: 0.4rem 0.8rem !important;
+  border-radius: 6px !important;
   transition: all 0.2s ease !important;
 }
 
 .gsc-comment-box-tab:hover {
-  background: rgba(37, 38, 39, 0.6) !important;
+  background: rgba(37, 38, 39, 0.4) !important;
 }
 
 .gsc-comment-box-tab.gsc-comment-box-tab-active {
-  background: var(--giscus-dark-bg) !important;
   color: var(--giscus-dark-text) !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+  background: rgba(37, 38, 39, 0.3) !important;
 }
 
 .gsc-comment-box-textarea,
 .gsc-comment-box-preview {
-  background: var(--giscus-dark-bg) !important;
-  border: 1px solid var(--giscus-dark-border) !important;
-  border-radius: 12px !important;
+  background: rgba(37, 38, 39, 0.4) !important;
+  border: none !important;
+  border-radius: 8px !important;
   color: var(--giscus-dark-text) !important;
   font-family: var(--giscus-font) !important;
   font-size: 0.9rem !important;
   line-height: 1.6 !important;
-  padding: 1rem !important;
+  padding: 0.85rem !important;
 }
 
 .gsc-comment-box-textarea:focus,
 .gsc-comment-box-preview:focus {
   outline: none !important;
-  border-color: #6c7a85 !important;
-  box-shadow: 0 0 0 3px rgba(108, 122, 133, 0.2) !important;
+  background: rgba(37, 38, 39, 0.6) !important;
 }
 
 .gsc-comment-box-textarea::placeholder {
-  color: #6c7a85 !important;
+  color: #5c6370 !important;
 }
 
 .gsc-comment-box .gsc-button {
-  background: linear-gradient(180deg, #5d6d75 0%, #4f5f67 100%) !important;
+  background: rgba(108, 122, 133, 0.4) !important;
   border: none !important;
-  border-radius: 10px !important;
-  color: #e8e8e8 !important;
+  border-radius: 8px !important;
+  color: var(--giscus-dark-text) !important;
   font-family: var(--giscus-font) !important;
   font-size: 0.85rem !important;
   font-weight: 600 !important;
-  padding: 0.6rem 1.4rem !important;
+  padding: 0.5rem 1.2rem !important;
   transition: all 0.2s ease !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
 }
 
 .gsc-comment-box .gsc-button:hover {
-  background: linear-gradient(180deg, #4f5f67 0%, #435158 100%) !important;
-  transform: translateY(-1px) !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+  background: rgba(108, 122, 133, 0.6) !important;
 }
 
 .gsc-timeline {
@@ -89,26 +83,31 @@
 }
 
 .gsc-comments {
-  gap: 1.25rem !important;
+  gap: 0 !important;
 }
 
 .gsc-comment {
-  background: rgba(48, 50, 55, 0.4) !important;
-  border: 1px solid rgba(64, 66, 72, 0.5) !important;
-  border-radius: 14px !important;
-  padding: 0.5rem !important;
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 1px solid rgba(64, 66, 72, 0.3) !important;
+  border-radius: 0 !important;
+  padding: 1rem 0 !important;
+}
+
+.gsc-comment:last-child {
+  border-bottom: none !important;
 }
 
 .gsc-comment-header {
   background: transparent !important;
-  border-bottom: 1px solid rgba(64, 66, 72, 0.4) !important;
-  padding: 0.75rem 1rem !important;
+  border: none !important;
+  padding: 0 0 0.5rem !important;
 }
 
 .gsc-comment-author-avatar {
   border-radius: 50% !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
-  border: 2px solid var(--giscus-dark-border) !important;
+  box-shadow: none !important;
+  border: none !important;
 }
 
 .gsc-comment-author {
@@ -120,7 +119,7 @@
 .gsc-comment-time {
   font-family: var(--giscus-font) !important;
   color: var(--giscus-dark-text-secondary) !important;
-  font-size: 0.8rem !important;
+  font-size: 0.78rem !important;
 }
 
 .gsc-comment-content {
@@ -128,7 +127,7 @@
   font-size: 0.95rem !important;
   line-height: 1.7 !important;
   color: var(--giscus-dark-text) !important;
-  padding: 0.75rem 1rem !important;
+  padding: 0.5rem 0 0 !important;
 }
 
 .gsc-comment-content p {
@@ -142,7 +141,7 @@
 .gsc-comment-content a {
   color: #79c0ff !important;
   text-decoration: underline !important;
-  text-decoration-color: rgba(121, 192, 255, 0.4) !important;
+  text-decoration-color: rgba(121, 192, 255, 0.3) !important;
   text-underline-offset: 2px !important;
 }
 
@@ -154,46 +153,41 @@
   font-family: var(--giscus-font) !important;
   font-size: 0.78rem !important;
   color: var(--giscus-dark-text-secondary) !important;
-  padding: 0.5rem 1rem !important;
+  padding: 0.5rem 0.5rem 0.5rem 0 !important;
 }
 
 .gsc-comment-action:hover {
   color: var(--giscus-dark-text) !important;
-  background: rgba(48, 50, 55, 0.5) !important;
-  border-radius: 6px !important;
 }
 
 .gsc-reactions {
   background: transparent !important;
-  border-bottom: 1px solid rgba(64, 66, 72, 0.4) !important;
-  padding: 0.75rem 1rem !important;
-  margin-bottom: 1rem !important;
+  border: none !important;
+  border-bottom: 1px solid rgba(64, 66, 72, 0.3) !important;
+  padding: 0.75rem 0 !important;
+  margin-bottom: 0 !important;
 }
 
 .gsc-reactions-count {
   font-family: var(--giscus-font) !important;
-  font-size: 0.85rem !important;
+  font-size: 0.82rem !important;
   font-weight: 600 !important;
   color: var(--giscus-dark-text-secondary) !important;
 }
 
 .gsc-social-reaction-summary-item {
-  background: rgba(48, 50, 55, 0.6) !important;
-  border: 1px solid var(--giscus-dark-border) !important;
-  border-radius: 20px !important;
-  padding: 0.25rem 0.6rem !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0.2rem 0.4rem !important;
   font-family: var(--giscus-font) !important;
-  font-size: 0.8rem !important;
-}
-
-.gsc-social-reaction-summary-item:hover {
-  background: rgba(48, 50, 55, 0.8) !important;
+  font-size: 0.78rem !important;
 }
 
 .gsc-header {
   background: transparent !important;
-  border-bottom: 1px solid var(--giscus-dark-border) !important;
-  padding: 1rem !important;
+  border: none !important;
+  padding: 1rem 0 !important;
 }
 
 .gsc-header-title {
@@ -208,22 +202,20 @@
   font-style: italic !important;
 }
 
-/* Sort dropdown */
 .gsc-sort-dropdown {
   font-family: var(--giscus-font) !important;
 }
 
 .gsc-sort-item {
   font-family: var(--giscus-font) !important;
-  font-size: 0.85rem !important;
+  font-size: 0.82rem !important;
   color: var(--giscus-dark-text-secondary) !important;
 }
 
 .gsc-sort-item:hover {
-  background: rgba(48, 50, 55, 0.5) !important;
+  background: rgba(37, 38, 39, 0.4) !important;
 }
 
-/* Loading state */
 .gsc-loading-icon {
-  filter: grayscale(0.3) brightness(0.8) !important;
+  filter: brightness(0.7) !important;
 }
