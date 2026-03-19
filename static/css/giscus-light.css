@@ -4,21 +4,18 @@
   --gc-bg-2:    #eee8d5;
   --gc-text:    #657b83;
   --gc-text-2:  #93a1a1;
-  --gc-border:  #eee8d5;
+  --gc-border:  #ddd5bc;
   --gc-link:    #268bd2;
 }
 
-/* ── iframe background ──────────────────────────────── */
+/* ── iframe root — fixes white "loading" flash ──────── */
 html, body {
   background: var(--gc-bg) !important;
-}
-
-/* ── iframe wrapper ─────────────────────────────────── */
-.giscus-frame {
+  color: var(--gc-text) !important;
   font-family: var(--gc-font) !important;
 }
 
-/* ── page background ────────────────────────────────── */
+/* ── transparent backgrounds throughout ─────────────── */
 .gsc-main,
 .gsc-timeline,
 .gsc-comments,
@@ -27,43 +24,43 @@ html, body {
 .gsc-comment,
 .gsc-comment-header,
 .gsc-comment-box,
-.gsc-comment-box-tabs {
+.gsc-comment-box-tabs,
+.gsc-comment-box-main,
+.gsc-comment-box-bottom,
+.gsc-comment-box-md-toolbar {
   background: transparent !important;
   border: none !important;
   border-radius: 0 !important;
   box-shadow: none !important;
 }
 
-/* ── text ───────────────────────────────────────────── */
+/* ── text colors ────────────────────────────────────── */
 .gsc-main,
 .gsc-header-title,
-.gsc-reactions-count,
 .gsc-comment-author,
 .gsc-comment-content,
 .gsc-no-comment,
-.gsc-comment-action,
-.gsc-sort-item {
+.gsc-comment-action {
   color: var(--gc-text) !important;
   font-family: var(--gc-font) !important;
 }
 
-/* headings */
-.gsc-header h4,
-.gsc-header h4 a,
-.gsc-comments h4,
-.gsc-comments h4 a {
+/* override any heading/link color giscus sets */
+h1, h2, h3, h4, h5, h6,
+h1 a, h2 a, h3 a, h4 a {
   color: var(--gc-text) !important;
 }
 
-/* secondary / muted */
+/* muted secondary */
 .gsc-comment-time,
 .gsc-reactions-count,
 .gsc-sort-item {
   color: var(--gc-text-2) !important;
+  font-family: var(--gc-font) !important;
   font-size: 0.78rem !important;
 }
 
-/* ── separators ─────────────────────────────────────── */
+/* ── separators — match blog hr ─────────────────────── */
 .gsc-reactions {
   border-bottom: 1px solid var(--gc-border) !important;
   padding: 0.75rem 0 !important;
@@ -79,7 +76,7 @@ html, body {
   border-bottom: none !important;
 }
 
-/* ── comment box tabs ───────────────────────────────── */
+/* ── write / preview tabs ───────────────────────────── */
 .gsc-comment-box-tabs {
   padding: 0.5rem 0 !important;
 }
@@ -87,60 +84,73 @@ html, body {
 .gsc-comment-box-tab {
   font-family: var(--gc-font) !important;
   font-size: 0.82rem !important;
-  font-weight: 600 !important;
+  font-weight: 500 !important;
   color: var(--gc-text-2) !important;
-  padding: 0.4rem 0.8rem !important;
-  border-radius: 6px !important;
-  transition: all 0.2s ease !important;
+  background: transparent !important;
+  border: 1px solid transparent !important;
+  border-radius: 4px !important;
+  padding: 0.3rem 0.7rem !important;
+  transition: all 0.15s ease !important;
 }
 
 .gsc-comment-box-tab:hover {
-  background: var(--gc-bg-2) !important;
+  color: var(--gc-text) !important;
+  border-color: var(--gc-border) !important;
 }
 
 .gsc-comment-box-tab.gsc-comment-box-tab-active {
   color: var(--gc-text) !important;
-  background: var(--gc-bg-2) !important;
+  border-color: var(--gc-border) !important;
+  background: transparent !important;
 }
 
-/* ── textarea ───────────────────────────────────────── */
+/* ── textarea — transparent, just border ────────────── */
 .gsc-comment-box-textarea,
 .gsc-comment-box-preview {
-  background: var(--gc-bg-2) !important;
-  border: none !important;
+  background: transparent !important;
+  border: 1px solid var(--gc-border) !important;
   border-radius: 6px !important;
   color: var(--gc-text) !important;
   font-family: var(--gc-font) !important;
   font-size: 0.9rem !important;
   line-height: 1.6 !important;
   padding: 0.85rem !important;
+  resize: vertical !important;
 }
 
 .gsc-comment-box-textarea:focus,
 .gsc-comment-box-preview:focus {
   outline: none !important;
-  background: var(--gc-bg-2) !important;
+  border-color: var(--gc-text-2) !important;
 }
 
 .gsc-comment-box-textarea::placeholder {
   color: var(--gc-text-2) !important;
 }
 
-/* ── submit button ──────────────────────────────────── */
-.gsc-comment-box .gsc-button {
-  background: var(--gc-bg-2) !important;
-  border: none !important;
+/* ── markdown toolbar row ───────────────────────────── */
+.gsc-comment-box-bottom {
+  padding: 0.4rem 0 !important;
+}
+
+/* ── sign in / submit button ────────────────────────── */
+.gsc-comment-box .gsc-button,
+a.btn[href*="oauth"] {
+  background: transparent !important;
+  border: 1px solid var(--gc-border) !important;
   border-radius: 6px !important;
   color: var(--gc-text) !important;
   font-family: var(--gc-font) !important;
   font-size: 0.85rem !important;
-  font-weight: 600 !important;
-  padding: 0.5rem 1.2rem !important;
-  transition: all 0.2s ease !important;
+  font-weight: 500 !important;
+  padding: 0.45rem 1.1rem !important;
+  transition: border-color 0.15s ease, color 0.15s ease !important;
 }
 
-.gsc-comment-box .gsc-button:hover {
-  filter: brightness(0.95) !important;
+.gsc-comment-box .gsc-button:hover,
+a.btn[href*="oauth"]:hover {
+  border-color: var(--gc-text-2) !important;
+  color: var(--gc-text) !important;
 }
 
 /* ── comment content ────────────────────────────────── */
@@ -150,19 +160,14 @@ html, body {
   padding: 0.5rem 0 0 !important;
 }
 
-.gsc-comment-content p {
-  margin: 0 0 0.75em !important;
-}
-
-.gsc-comment-content p:last-child {
-  margin-bottom: 0 !important;
-}
+.gsc-comment-content p { margin: 0 0 0.75em !important; }
+.gsc-comment-content p:last-child { margin-bottom: 0 !important; }
 
 .gsc-comment-content a {
   color: var(--gc-link) !important;
   text-decoration: underline !important;
-  text-decoration-color: rgba(38, 139, 210, 0.35) !important;
   text-underline-offset: 2px !important;
+  text-decoration-color: rgba(38, 139, 210, 0.35) !important;
 }
 
 .gsc-comment-content a:hover {
@@ -172,49 +177,19 @@ html, body {
 /* ── reactions ──────────────────────────────────────── */
 .gsc-social-reaction-summary-item {
   background: transparent !important;
-  border: none !important;
-  border-radius: 0 !important;
-  padding: 0.2rem 0.4rem !important;
-  font-family: var(--gc-font) !important;
+  border: 1px solid var(--gc-border) !important;
+  border-radius: 4px !important;
+  padding: 0.15rem 0.4rem !important;
   font-size: 0.78rem !important;
 }
 
 /* ── misc ───────────────────────────────────────────── */
-.gsc-comment-author-avatar {
-  border-radius: 50% !important;
-  box-shadow: none !important;
-  border: none !important;
-}
-
-.gsc-header {
-  padding: 1rem 0 !important;
-}
-
-.gsc-comments {
-  gap: 0 !important;
-}
-
-.gsc-comment-header {
-  padding: 0 0 0.5rem !important;
-}
-
-.gsc-comment-action {
-  font-size: 0.78rem !important;
-  padding: 0.5rem 0.5rem 0.5rem 0 !important;
-}
-
-.gsc-comment-action:hover {
-  color: var(--gc-text) !important;
-}
-
-.gsc-sort-dropdown {
-  font-family: var(--gc-font) !important;
-}
-
-.gsc-sort-item:hover {
-  background: var(--gc-bg-2) !important;
-}
-
-.gsc-loading-icon {
-  filter: grayscale(0.5) !important;
-}
+.gsc-comment-author-avatar { border-radius: 50% !important; box-shadow: none !important; border: none !important; }
+.gsc-header { padding: 1rem 0 !important; }
+.gsc-comments { gap: 0 !important; }
+.gsc-comment-header { padding: 0 0 0.5rem !important; }
+.gsc-comment-action { font-size: 0.78rem !important; padding: 0.5rem 0.5rem 0.5rem 0 !important; }
+.gsc-comment-action:hover { color: var(--gc-text) !important; }
+.gsc-sort-dropdown { font-family: var(--gc-font) !important; }
+.gsc-sort-item:hover { color: var(--gc-text) !important; }
+.gsc-loading-icon { filter: grayscale(0.5) !important; }
