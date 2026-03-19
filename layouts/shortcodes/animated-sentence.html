@@ -147,7 +147,7 @@ body.dark-theme .anim-sentence {
   white-space: nowrap;
 }
 
-/* MUSICAL NOTES from screen edges */
+/* MUSICAL NOTES drifting up from the bottom of the viewport */
 .music-note {
   position: fixed;
   pointer-events: none;
@@ -158,11 +158,11 @@ body.dark-theme .anim-sentence {
 }
 
 body:not(.dark-theme) .music-note {
-  color: rgba(120, 80, 10, 0.7);
+  color: rgba(120, 80, 10, 0.46);
 }
 
 body.dark-theme .music-note {
-  color: rgba(255, 224, 130, 0.6);
+  color: rgba(255, 224, 130, 0.4);
 }
 
 @keyframes noteFloat {
@@ -170,11 +170,11 @@ body.dark-theme .music-note {
     opacity: 0;
     transform: translateY(0) rotate(0deg);
   }
-  12% {
-    opacity: 0.75;
+  10% {
+    opacity: 0.52;
   }
-  55% {
-    opacity: 0.5;
+  38% {
+    opacity: 0.24;
   }
   100% {
     opacity: 0;
@@ -417,21 +417,16 @@ body.dark-theme .music-note {
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  // ── Musical notes from screen edges ────────────────────
+  // ── Musical notes across the bottom edge ───────────────
   const symbols = ['♪', '♫', '♩', '♬'];
   let noteInterval = null;
 
-  function spawnNote(side) {
+  function spawnNote() {
     const note = document.createElement('span');
     note.className = 'music-note';
     note.textContent = symbols[Math.floor(Math.random() * symbols.length)];
-    note.style.bottom = (10 + Math.random() * 30) + 'px';
-    // Place near the viewport edges, away from content
-    if (side === 'left') {
-      note.style.left = (10 + Math.random() * 40) + 'px';
-    } else {
-      note.style.right = (10 + Math.random() * 40) + 'px';
-    }
+    note.style.bottom = (8 + Math.random() * 24) + 'px';
+    note.style.left = (4 + Math.random() * 92) + 'vw';
     note.style.fontSize = (1.1 + Math.random() * 0.5) + 'rem';
     document.body.appendChild(note);
     note.addEventListener('animationend', () => note.remove());
@@ -439,12 +434,14 @@ body.dark-theme .music-note {
 
   function startNotes() {
     if (noteInterval) return;
-    spawnNote('left');
-    setTimeout(() => spawnNote('right'), 600);
+    spawnNote();
+    setTimeout(() => spawnNote(), 500);
+    setTimeout(() => spawnNote(), 1100);
     noteInterval = setInterval(() => {
-      spawnNote('left');
-      setTimeout(() => spawnNote('right'), 1200 + Math.random() * 800);
-    }, 5000);
+      spawnNote();
+      setTimeout(() => spawnNote(), 900 + Math.random() * 600);
+      setTimeout(() => spawnNote(), 1800 + Math.random() * 700);
+    }, 4200);
   }
 
   function stopNotes() {
