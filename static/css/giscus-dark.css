@@ -8,6 +8,11 @@
   --gc-link:    #79c0ff;
 }
 
+/* ── iframe background ──────────────────────────────── */
+html, body {
+  background: var(--gc-bg) !important;
+}
+
 /* ── iframe wrapper ─────────────────────────────────── */
 .giscus-frame {
   font-family: var(--gc-font) !important;
