@@ -8,7 +8,10 @@
   --gc-link:    #79c0ff;
 }
 
-/* ── iframe root — fixes white "loading" flash ──────── */
+/* ── iframe root — fixes loading flash + native form colors ── */
+html {
+  color-scheme: dark !important;
+}
 html, body {
   background: var(--gc-bg) !important;
   color: var(--gc-text) !important;
