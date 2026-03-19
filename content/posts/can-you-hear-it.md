@@ -59,7 +59,7 @@ Once you start actually using it though, you'll notice it's a bit flaky. You won
 
 Getting that loop right requires you to visualize the system clearly: what goes in, what should come out, and where it can go wrong. That's just **programming**. Except once the [loop](https://martinfowler.com/articles/exploring-gen-ai/humans-and-agents.html) is working, you're operating at a scale that wasn't possible before. This then leaves you with more headspace to be able to do more. You can use this headspace to think more on your architecture, scrutinize and refine your SDLC practices, upskill yourself on things you wanted to. You get the drift, right?
 
-Another side-effect I noticed: the age-old software engineering practices that were often quietly skipped in the name of shipping quickly, but never acknowledged unless everything caught on 🔥 - like tests, clear interfaces, well-defined contracts, documentation etc have suddenly become all the more important. AI requires them to have these self-corrective loops towards autonomy. Oh, how the tables have turned!? The product and engineering have to be in alignment now. The craftsman in me is happy. ᕕ( ᐛ )ᕗ
+Another side-effect I noticed: the age-old software engineering practices that were often quietly skipped in the name of shipping quickly, but never acknowledged unless everything [caught on 🔥](https://www.workchronicles.com/p/comic-prevention-vs-cure) - like tests, clear interfaces, well-defined contracts, documentation etc have suddenly become all the more important. AI requires them to have these self-corrective loops towards autonomy. Oh, how the tables have turned!? The product and engineering have to be in alignment now. The craftsman in me is happy. ᕕ( ᐛ )ᕗ
 
 ---
 
