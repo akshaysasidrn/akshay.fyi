@@ -109,6 +109,14 @@ h1 a, h2 a, h3 a, h4 a {
 }
 
 /* ── textarea — transparent, just border ────────────── */
+/* extras div sits between textarea and bottom row; strip its dark default border */
+.gsc-comment-box-textarea-extras {
+  border: 1px solid var(--gc-border-soft) !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  background: transparent !important;
+}
+
 .gsc-comment-box-textarea,
 .gsc-comment-box-preview {
   background: transparent !important;
