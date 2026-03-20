@@ -37,6 +37,7 @@ html, body {
   border: none !important;
   border-radius: 0 !important;
   box-shadow: none !important;
+  margin: 0 !important;
 }
 
 /* ── text colors ────────────────────────────────────── */
@@ -115,7 +116,9 @@ h1 a, h2 a, h3 a, h4 a {
   border: 1px solid var(--gc-border-soft) !important;
   border-top: none !important;
   border-bottom: none !important;
+  border-radius: 0 !important;
   background: transparent !important;
+  margin: 0 !important;
 }
 
 .gsc-comment-box-textarea,
