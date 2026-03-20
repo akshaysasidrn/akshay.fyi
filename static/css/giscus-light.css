@@ -100,12 +100,12 @@ h1 a, h2 a, h3 a, h4 a {
 
 .gsc-comment-box-tab:hover {
   color: var(--gc-text) !important;
-  border-color: var(--gc-border) !important;
+  border-color: var(--gc-border-soft) !important;
 }
 
 .gsc-comment-box-tab.gsc-comment-box-tab-active {
   color: var(--gc-text) !important;
-  border-color: var(--gc-border) !important;
+  border-color: var(--gc-border-soft) !important;
   background: transparent !important;
 }
 
