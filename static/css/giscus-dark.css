@@ -141,11 +141,11 @@ h1 a, h2 a, h3 a, h4 a {
   color: var(--gc-text-2) !important;
 }
 
-/* ── markdown toolbar row — merges with textarea ────── */
+/* ── bottom row (sign in / submit) — separator from textarea ── */
 .gsc-comment-box-bottom {
   padding: 0.4rem 0.4rem !important;
   border: 1px solid var(--gc-border-soft) !important;
-  border-top: none !important;
+  border-top: 1px solid var(--gc-border-soft) !important;
   border-radius: 0 0 6px 6px !important;
 }
 
